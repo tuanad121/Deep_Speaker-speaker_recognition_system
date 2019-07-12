@@ -132,12 +132,12 @@ def convolutional_model(input_shape=(NUM_FRAMES,64, 1),    #input_shape(32,32,3)
     #x = Reshape((-1,2048))(x)
     x = Lambda(lambda y: K.reshape(y, (-1, math.ceil(num_frames/16), 2048)), name='reshape')(x)
     x = Lambda(lambda y: K.mean(y, axis=1), name='average')(x)  #shape = (BATCH_SIZE, 512)
-    x = Dense(512, name='affine')(x)  # .shape = (BATCH_SIZE , 512)
+    x = Dense(32, name='affine')(x)  # .shape = (BATCH_SIZE , 512)
     x = Lambda(lambda y: K.l2_normalize(y, axis=1), name='ln')(x)
 
     model = Model(inputs, x, name='convolutional')
 
-    #print(model.summary())
+    print(model.summary())
     return model
 
 def convolutional_model_simple(input_shape=(NUM_FRAMES,64, 1),    #input_shape(32,32,3)
