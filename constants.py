@@ -1,7 +1,7 @@
 
 DATASET_DIR = 'audio/LibriSpeechSamples/train-clean-100-npy/'
 TEST_DIR = 'audio/LibriSpeechSamples/train-clean-100-npy/'
-WAV_DIR = 'audio/LibriSpeechSamples/train-clean-100/'
+WAV_DIR = '/dat/corpora/OpenSLR/SLR60/LibriTTS/train-clean-100/'
 KALDI_DIR = ''
 
 BATCH_SIZE = 32        #must be even
